@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Isolated Scopes</title>
+</head>
+
+<style>
+    
+    .bold_text{
+        font-weight: bold;
+    }
+    .flex-container {
+        display: flex;
+        flex-flow: column;
+        list-style: none;
+    }
+
+    .flex-input {
+        list-style: none;
+        background: white;
+        color: black;
+        margin: auto;
+    }
+
+    .flex-list{
+        list-style: none;
+        background: white;
+        color: black;
+        margin: auto;
+    }
+
+    .list-break{
+        margin-bottom: 25px;
+    }
+
+    .input-break{
+        margin-bottom: 50px;
+    }
+
+</style>
+
+
+<body ng-app="myModule">
+	<div ng-controller="myController">
+
+        <ul class= "flex-container">
+            <div class="flex-input">
+                <div class="input-break">
+                    <center>
+                    Name: <input type="text" ng-model="personName">
+                    City: <input type="text" ng-model="personCity"><br /><br />
+                    <button ng-click="addPerson(personName, personCity)">Add Person <i class="fa fa-plus-circle"></i></button><br /><br />
+                    </center>
+                </div>
+            </div>
+            
+            <li class="flex-list">
+                <center>
+                <div ng-repeat = "person in list | orderBy: 'name' | filter: filter" >
+                    <color-directive><delete-directive my-list = "list" my-person = "person"><bold-directive>{{person.name}} - {{person.city}}</bold-directive></delete-directive></color-directive>
+               </div>
+               Filter: <br />
+               <input type="text" ng-model="filter">
+               </center>
+            </li>
+        </ul>
+	</div>
+
+</body>
+
+</html>
