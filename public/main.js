@@ -4,7 +4,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/IsolatedScope.html'
+                template: '<h1>HOME</h1>'
             })
     })
 
