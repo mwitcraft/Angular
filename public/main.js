@@ -1,11 +1,15 @@
 	var myModule = angular.module("myModule", ["ui.router"]);
 
-    myModule.config(function($stateProvider) {
-        $stateProvider
-            .state('home', {
-                url: '/',
-                template: '<h1>HOME</h1>'
-            })
+    myModule.config(function($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+
+        .state("home", {
+            url: '/home',
+            template: '<h1>MASON</h1>',
+        })
     })
 
 	myModule.controller("myController", function($scope){
