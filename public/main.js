@@ -8,7 +8,12 @@
 
         .state("home", {
             url: '/home',
-            template: '<h1>MASON</h1>',
+            templateUrl: 'isolatedscope.html',
+        })
+
+        .state("nextPage", {
+            url: '/next',
+            template: '<h1>NEXT PAGE</h1>'
         })
     })
 
